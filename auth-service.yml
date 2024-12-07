@@ -6,7 +6,7 @@ spring:
     name: auth-service
     
   datasource:
-    url: jdbc:postgresql://database:5432/freelance
+    url: jdbc:postgresql://database:5432/freelance-users
     username: admin
     password: 123
     driverClassName: org.postgresql.Driver
@@ -15,9 +15,13 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: none
-      
-  main:
-    web-application-type: reactive
+
+  security:
+    jwt:
+      secret: 5b046270efd8cc8456005c27c0b30b2dc37b7c9877694a513da9806877ac95922b09326e3cccadd6b8ba6ddf730676f2ec356be4949691669018f56eb383beca
+      access: 1
+      refresh: 24
+
     
 eureka:
   instance:
@@ -29,4 +33,4 @@ eureka:
     fetch-registry: true
 
 server:
-  port: 8089
+  port: 8086
