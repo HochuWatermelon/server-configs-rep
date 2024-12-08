@@ -1,20 +1,17 @@
 spring:
+  r2dbc:
+    url: r2dbc:postgresql://database:5432/freelance-users
+    username: admin
+    password: 123
+    
   liquibase:
-    enabled: true
+    url: jdbc:postgresql://database:5432/freelance-users
+    user: admin
+    password: 123
     
   application:
     name: auth-service
-    
-  datasource:
-    url: jdbc:postgresql://database:5432/freelance-users
-    username: admin
-    password: 123
-    driverClassName: org.postgresql.Driver
-    
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: none
+
 
   security:
     jwt:
