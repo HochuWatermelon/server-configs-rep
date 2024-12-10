@@ -1,0 +1,43 @@
+spring:
+  liquibase:
+    enabled: true
+
+  application:
+    name: order-service
+
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+
+  datasource:
+    url: jdbc:postgresql://database:5432/freelance-order
+    username: admin
+    password: 123
+    driverClassName: org.postgresql.Driver
+
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: 5000
+            readTimeout: 5000
+            loggerLevel: basic
+      sports-order:
+        name: order-service
+        url: order-service
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+server:
+  port: 8089
