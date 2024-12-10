@@ -40,6 +40,8 @@ resilience4j:
         permittedNumberOfCallsInHalfOpenState: 5
 
 server:
+  api:
+    prefix: /freelance-api
   port: 8088
 eureka:
   instance:
