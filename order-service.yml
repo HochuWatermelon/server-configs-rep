@@ -27,8 +27,8 @@ spring:
             readTimeout: 5000
             loggerLevel: basic
       sports-order:
-        name: order-service
-        url: order-service
+        name: worker-service
+        url: worker-service
 
 eureka:
   instance:
